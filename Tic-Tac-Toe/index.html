@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <div class="wrapper">
+            <div class="CurrentPlayer" id="CurrentPlayer">
+                <div>Current Player : </div>
+                <div class="CP" id="CP">
+                </div>
+            </div>  
+            <div class="gridbox">
+                <div class="square" id="Square1" onclick="SquareClick(1)"></div>
+                <div class="square" id="Square2" onclick="SquareClick(2)"></div>
+                <div class="square" id="Square3" onclick="SquareClick(3)"></div>
+                <div class="square" id="Square4" onclick="SquareClick(4)"></div>
+                <div class="square" id="Square5" onclick="SquareClick(5)"></div>
+                <div class="square" id="Square6" onclick="SquareClick(6)"></div>
+                <div class="square" id="Square7" onclick="SquareClick(7)"></div>
+                <div class="square" id="Square8" onclick="SquareClick(8)"></div>
+                <div class="square" id="Square9" onclick="SquareClick(9)"></div>
+            </div>
+            <div class="panel">
+                <div class="RestartBtn" onclick="location.reload()">RESTART</div>
+            </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
