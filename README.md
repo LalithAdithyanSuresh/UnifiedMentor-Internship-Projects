@@ -4,7 +4,7 @@ Welcome to the repository containing the projects I've completed during my Web D
 
 ## Projects Overview
 
-1. **Tic-Tac-Toe**
+1. **Tic-Tac-Toe** ([ Play Now! ](https://lalithadithyansuresh.github.io/UnifiedMentor-Internship-Projects/Tic-Tac-Toe/))
    - Description: A reponsive website to play the game Tic-Tac-Toe.
    - Folder: [Tic-Tac-Toe](/Tic-Tac-Toe)
    - Technologies: HTML, CSS, JavaScript.
