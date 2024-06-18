@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Memory Game</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="Beg" id="Beg">
+            <div class="title">
+                Memory Game
+            </div>
+            <div class="centremenu">
+                <div class="arrow up" onclick="inc()" id="inc"></div>
+                <div class="card back" id="maincard">
+                    <img src="assets/CardBack.png">
+                    <div class="count" id="count">6</div>
+                </div>
+                <div class="arrow down disabled" onclick="dec()" id="dec"></div>
+                <div class="play" id="play" onclick="play()">PLAY</div>
+            </div>
+        </div>
+        <div class="scoreHolder hidden" id="SCORE">
+            <div id="score1">0</div>
+            - 
+            <div id="score2">0</div>
+        </div>
+        <div class="cardGrid hidden" id="GRID">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

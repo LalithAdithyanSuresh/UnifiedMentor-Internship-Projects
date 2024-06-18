@@ -1,0 +1,176 @@
+:root{
+    --BgColor : rgb(255, 245, 225);
+    --MainColor: rgb(12, 24, 68);
+    --altColor : rgb(255, 105, 105);
+    --SecColor: rgb(200, 0, 54);
+    --cardWidth:200px;
+}
+body{
+    background-color: var(--BgColor);
+    margin: 0;
+    padding: 0;
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.card{
+    width: var(--cardWidth);
+    position: relative;
+    aspect-ratio:  0.7;
+    border-radius: 5px;
+    margin: 10px;
+    transition: 0.1s;
+    /* background-color: var(--MainColor); */
+    overflow: hidden;
+}
+.card>img{
+    width: 166%;
+    left: -34%;
+    top: -14%;
+    height: 130%;
+    position: absolute;
+    z-index: 10;
+}
+.arrow{
+    width:calc( var(--cardWidth) *0.2);
+    aspect-ratio: 1;
+    z-index: 10;
+    transition: 0.2s;
+    background-color: var(--SecColor);
+    content:"";
+    cursor: pointer;
+    display:block;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.arrow.down{
+    transform: rotateZ(180deg);
+}
+.wrapper{
+    max-width: 1000px;
+}
+.reveal{
+    opacity: 0;
+    scale: 0;
+    animation: rev 0.1s 0.1s ease-out forwards;
+}
+@keyframes rev {
+    0%{
+        opacity: 0;
+        scale: 0;
+    }100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
+.hidden{
+    overflow: hidden;
+    animation: hide 0.1s ease-in forwards;
+}
+@keyframes hide {
+    0%{
+        opacity: 1;
+        scale: 1;
+    }
+   99%{
+        scale: 0;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+.Beg{
+    width: 100%;
+    height:100%;
+}
+.title{
+    color: var(--MainColor);
+    font-weight: bold;
+    width:100%;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+.centremenu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.centremenu>.card{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#maincard>img{
+    opacity: 0.4;
+    z-index: 10;
+}
+.count{
+    width:80%;
+    text-align: center;
+    font-size: 80px;
+    z-index: 100;
+    font-weight: bold;
+    color: var(--MainColor);
+}
+.disabled{
+    background-color: var(--altColor);
+    scale: 0;
+}
+.play{
+    width: var(--cardWidth);
+    aspect-ratio: 4.3;
+    background-color: green;
+    border-radius: 10px;
+    margin-top: 60px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    padding-top: 10px;
+    font-size: 30px;
+    transition: 0.2s;
+}
+.play:hover{
+    scale: 1.1;
+    background-color: rgb(4, 165, 4);
+}
+.cardGrid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.scoreHolder{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--MainColor);
+}
+.scoreHolder>div{
+    margin: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+}
+.scoreHolder>div:nth-child(1){
+    background-color: rgb(249, 168, 168);
+}
+.scoreHolder>div:nth-child(2){
+    background-color: rgb(200, 209, 247);
+}
+    
