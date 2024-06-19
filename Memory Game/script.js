@@ -1,15 +1,24 @@
+// Window Elements
 SCREEN_WIDTH = window.innerWidth;
 SCREEN_HEIGHT = window.innerHeight;
+
+AVAILABLE_HEIGHT = SCREEN_HEIGHT - 145;
+
+// Card Elements
 MAX_CARD = 12
 CARD_WIDTH = 60;
 CARD_COUNT = 6;
-SCORE_1 = 0;
-SCORE_2 = 0;
-C_PLAYER = 1;
 FLIP = true;
 R_FLIP = false;
 let CARD_STATE = [];
 let CARD_VALUE = [];
+
+// Player Elements
+SCORE_1 = 0;
+SCORE_2 = 0;
+C_PLAYER = 1;
+
+// Assigning Max cards and Size
 if(SCREEN_WIDTH > 800){
     CARD_WIDTH = 150;
     MAX_CARD = 18;
@@ -20,6 +29,8 @@ if(SCREEN_WIDTH > 800){
     CARD_WIDTH = 75;
     MAX_CARD = 14;
 }
+
+// Method to Increment the number of Cards
 function inc(){
     if(CARD_COUNT + 2 <=MAX_CARD){
         CARD_COUNT+=2;
@@ -30,6 +41,8 @@ function inc(){
         }
     }
 }
+
+// Method to Decrement the number of Cards
 function dec(){
     if(CARD_COUNT - 2 >= 6){
         CARD_COUNT-=2;
@@ -40,6 +53,8 @@ function dec(){
         }
     }
 }
+
+// Method to Set Elements accordingly to the player
 function SetPlayer(num){
     if(num==1){
         document.body.style.setProperty('background-color','rgb(249, 168, 168)');
@@ -57,6 +72,8 @@ function SetPlayer(num){
 
     }
 }
+
+// Method to Check if the player got the correct pair of cards
 function CheckWIN(){
     first = -1;
     cardIndex = -1;
@@ -85,6 +102,8 @@ function CheckWIN(){
         }
     }
 }
+
+// Method to Generate the end screen
 function EndSreen(){
     for(i =0;i<CARD_COUNT;i++){
         document.getElementById('Card'+(i+1)).classList.add('hidden');
@@ -105,7 +124,12 @@ function EndSreen(){
         document.getElementById('score1').style.setProperty('transform','scale(1)');
         document.getElementById('score1').style.setProperty('border','none');
     }
+    setTimeout(function(){
+        document.getElementById('playagain').classList.add('reveal');
+    },1000);
 }
+
+// Method to Re-Flip the cards if two cards are fliped
 function Reset(){
     let sum = 0;
     for (let i = 0; i < CARD_STATE.length; i++) {
@@ -148,6 +172,8 @@ function Reset(){
         },1500)
     }
 }
+
+// Method to flip a card that has been clicked
 function cardFlip(id){
     if(FLIP == false && R_FLIP == false){
         return;
@@ -182,6 +208,8 @@ function cardFlip(id){
     }
     Reset();
 }
+
+// Method to initiate the game
 function play(){
     document.getElementById('Beg').classList.add('hidden');
     document.getElementById('GRID').classList.remove('hidden');
