@@ -10,7 +10,7 @@ Welcome to the repository containing the projects I've completed during my Web D
    - Technologies: HTML, CSS, JavaScript.
 1. **Memory Game** ([ Play Now! ](https://lalithadithyansuresh.github.io/UnifiedMentor-Internship-Projects/Memory%20Game/))
    - Description: A reponsive website to play the game Tic-Tac-Toe.
-   - Folder: [Tic-Tac-Toe](/Memory%20Game)
+   - Folder: [Memory Game](/Memory%20Game)
    - Technologies: HTML, CSS, JavaScript.
 
 ## How to Explore
