@@ -17,7 +17,7 @@ if(SCREEN_WIDTH > 800){
     CARD_WIDTH = 150;
     MAX_CARD = 16;
 }else if(SCREEN_WIDTH > 360){
-    CARD_WIDTH = 80;
+    CARD_WIDTH = 75;
     MAX_CARD = 14;
 }
 function inc(){
@@ -67,7 +67,6 @@ function CheckWIN(){
                 first = CARD_VALUE[i];
             }else{
                 if(CARD_VALUE[i] == first){
-                    console.log('WINNER');
                     document.getElementById('Card'+(i+1)).style.setProperty('background-color','gold');
                     document.getElementById('Card'+(cardIndex+1)).style.setProperty('background-color','gold');
                     if(C_PLAYER == 1){
@@ -86,6 +85,27 @@ function CheckWIN(){
         }
     }
 }
+function EndSreen(){
+    for(i =0;i<CARD_COUNT;i++){
+        document.getElementById('Card'+(i+1)).classList.add('hidden');
+    }  
+    if(SCORE_1 > SCORE_2){
+        SetPlayer(1);
+        document.getElementById('score1').style.setProperty('transform','scale(1.6)');
+        document.getElementById('WinnerText').innerHTML= "PLAYER 1 WINS";
+    }else if(SCORE_1 < SCORE_2){
+        SetPlayer(2);
+        document.getElementById('WinnerText').innerHTML= "PLAYER 2 WINS";
+        document.getElementById('score2').style.setProperty('transform','scale(1.6)');
+    }else{
+        document.getElementById('WinnerText').innerHTML = "GAME TIED";
+        document.body.style.setProperty('background-color','rgb(255, 245, 225)');
+        document.getElementById('score2').style.setProperty('transform','scale(1)');
+        document.getElementById('score2').style.setProperty('border','none');
+        document.getElementById('score1').style.setProperty('transform','scale(1)');
+        document.getElementById('score1').style.setProperty('border','none');
+    }
+}
 function Reset(){
     let sum = 0;
     for (let i = 0; i < CARD_STATE.length; i++) {
@@ -101,12 +121,15 @@ function Reset(){
                         R_FLIP = true;
                         if(opt == 1){
                             CARD_STATE[i] =0;
-                            console.log('REMOVING CARDS');
                             document.getElementById('Card'+(i+1)).onclick = 'pass';
                             document.getElementById('Card'+(i+1)).classList.remove('reveal');
                             setTimeout(function(){
                                 document.getElementById('Card'+(i+1)).style.setProperty('opacity','0.5');
                             },50);
+                            if(SCORE_1 + SCORE_2 == CARD_COUNT/2){
+                                console.log('finished');
+                                    EndSreen();
+                            }
                         }else{
                             cardFlip(i+1);
                         }
@@ -119,7 +142,6 @@ function Reset(){
             }else{
                 C_PLAYER = 1;
             }
-            console.log(C_PLAYER);
             SetPlayer(C_PLAYER);
         },2000)
     }
@@ -132,7 +154,6 @@ function cardFlip(id){
     Card = document.getElementById('Card'+id);
     Card.style.setProperty('transform','rotateY(90deg)');
     if(CARD_STATE[id-1] == 0){
-        console.log(CARD_STATE);
         (function(Card,id){
             setTimeout(function(){
                 Card.style.setProperty('transform','rotateY(0deg) scale(1.1)');
