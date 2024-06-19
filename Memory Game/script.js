@@ -137,13 +137,15 @@ function Reset(){
                 })(i);
             }
             FLIP = true;
-            if(C_PLAYER ==1){
-                C_PLAYER = 2;
-            }else{
-                C_PLAYER = 1;
+            if(opt != 1){
+                if(C_PLAYER ==1){
+                    C_PLAYER = 2;
+                }else{
+                    C_PLAYER = 1;
+                }
+                SetPlayer(C_PLAYER);
             }
-            SetPlayer(C_PLAYER);
-        },2000)
+        },1500)
     }
 }
 function cardFlip(id){
