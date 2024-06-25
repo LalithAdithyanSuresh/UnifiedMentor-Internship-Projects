@@ -3,6 +3,7 @@ SCREEN_WIDTH = window.innerWidth;
 SCREEN_HEIGHT = window.innerHeight;
 
 AVAILABLE_HEIGHT = SCREEN_HEIGHT - 145;
+AVAILABLE_WIDTH = SCREEN_WIDTH > 1000 ? 1000 : SCREEN_WIDTH; 
 
 // Card Elements
 MAX_CARD = 12
